@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Letter Matching Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+    <style>
+        .letter-image {
+            width: 250px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .input-letter {
+            width: 250px;
+            height: 250px;
+            margin-right: 20px;
+            font-size: 60px;
+            text-align: center;
+            justify-content: center;
+            background-color: transparent;
+            border: 1px dashed #ddd;
+        }
+
+        .content-card {
+            border: 1px solid rgb(97, 97, 97);
+            padding: 15px;
+        }
+
+        .bg-dark {
+            --bs-bg-opacity: 1;
+            background-color: rgb(0 26 52) !important;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: #ffc107;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <audio id="successAudio" src="success.mp3" preload="auto"></audio>
+    <audio id="failureAudio" src="failure.mp3" preload="auto"></audio>
+
+    <div class="sidebar">
+        <a href="Hiragana.html">Hiragana</a>
+        <a href="Katakana.html">Katakana</a>
+        <a href="Kanji.html">Kanji</a>
+        <a href="Romaji.html">Rōmaji</a>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card bg-dark content-card">
+            <div class="card-body">
+                <h1 class="text-center mb-4 text-light">Letter Matching Game</h1>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img id="letter-image" class="letter-image" src="" alt="Letter Image">
+                            <input type="text" id="input-letter" class="form-control input-letter">
+                            <button id="submit-btn" class="btn btn-primary btn-block">Submit</button>
+                            <div id="result-box " class="row justify-content-center mt-4 ">
+                                <div id="result-content" class="alert text-light" role="alert"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+
+</html>
