@@ -52,6 +52,8 @@ This project is licensed under the MIT License.
 For any inquiries or feedback, please contact at jmrashed@gmail.com.
 Make sure to include relevant screenshots, installation instructions, usage guidelines, contribution guidelines, license information, credits, and contact details based on your project's specifics.
 
+Join with the facebook group on  <a target="_blank" href="https://www.facebook.com/groups/japanlanguage.club">japanlanguage.club</a> to get started quickly response and support.
+
 
 
 
