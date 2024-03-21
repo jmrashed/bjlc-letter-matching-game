@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bangladesh Japanese Language Club | Letter Matching Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description goes here">
+    <meta name="keywords" content="keyword1, keyword2, keyword3">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow"> <!-- To allow search engines to index and follow links on the page -->
+    <meta name="robots" content="noindex, nofollow">
+    <!-- To prevent search engines from indexing and following links on the page -->
+    <meta name="robots" content="noarchive"> <!-- To prevent search engines from saving a cached copy of the page -->
+    <meta name="robots" content="nosnippet">
+    <!-- To prevent search engines from showing a snippet of the page in the search results -->
+    <meta name="robots" content="noodp">
+    <!-- To prevent search engines from using Open Directory Project (ODP) information in the snippet -->
+    <meta name="robots" content="noimageindex"> <!-- To prevent search engines from indexing images on the page -->
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <!-- Set maximum values for snippet, image, and video previews -->
+    <meta name="googlebot" content="index, follow"> <!-- To specify directives specifically for Google's crawlers -->
+    <meta name="googlebot" content="nosnippet">
+    <!-- To prevent Google from showing a snippet of the page in the search results -->
+    <meta name="google" content="nositelinkssearchbox">
+    <!-- To prevent Google from showing a sitelinks search box for the page -->
+    <meta name="google" content="notranslate"> <!-- To prevent Google from offering to translate the page -->
+    <meta name="google" content="noarchive"> <!-- To prevent Google from saving a cached copy of the page -->
+    <meta name="google" content="nositelinkssearchbox">
+    <!-- To prevent Google from showing a sitelinks search box for the page -->
+    <meta name="google" content="noodp">
+    <!-- To prevent Google from using Open Directory Project (ODP) information in the snippet -->
+    <meta name="google" content="noimageindex"> <!-- To prevent Google from indexing images on the page -->
+    <meta name="google" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <!-- Set maximum values for snippet, image, and video previews for Google -->
+    <meta property="og:title" content="Bangladesh Japanese Language Club">
+    <meta property="og:description" content="Bangladesh Japanese Language Club">
+    <meta property="og:image" content="./assets/images/logo.png">
+    <meta property="og:url" content="https://example.com/page.html">
+    <meta name="twitter:title" content="Bangladesh Japanese Language Club">
+    <meta name="twitter:description" content="Bangladesh Japanese Language Club">
+    <meta name="twitter:image" content="./assets/images/logo.png">
+    <meta name="twitter:card" content="./assets/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+    <link rel="stylesheet" href="./assets/css/jmrashed.css">
+
+    <style>
+     
+        .keyboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .key {
+            padding: 10px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+         .key:hover{
+            font-weight: bold;
+            color: blue;
+         }
+
+    </style>
+</head>
+
+<body class="bg-dark">
+    <audio id="failureAudio" src="failure.mp3" preload="auto"></audio>
+    <audio id="mouseClick" src="mouse-click.mp3" preload="auto"></audio>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar col-md-3">
+                <a href="Hiragana.html">Hiragana</a>
+                <a href="Katakana.html">Katakana</a>
+                <a href="Kanji.html">Kanji</a>
+                <a href="Romaji.html">Rōmaji</a>
+                <a href="Writing.html">Writing</a>
+                <a href="Plants.html">Plants</a>
+            </div>
+
+            <div class="col-md-9 content">
+                <div class="container mt-5">
+                    <div class="card bg-dark content-card">
+                        <div class="card-body">
+                            <h1 class="text-center mb-4 text-light">Write the plant's name.</h1>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <img src="./assets/images/plants/Product 2.png" class="img img-fluid"
+                                        id="randomImageShow" alt="">
+                                </div>
+                                <div class="col-lg-8 col-md-8">
+                                     
+                                        <input type="text" class="form-control mb-3 p-3" name=""
+                                            placeholder="Japanese Name" id="japaneseInput">
+
+                                           <div class="row">
+                                            <div class="keyboard">
+                                                <div class="key" data-character="あ">あ</div>
+                                                <div class="key" data-character="い">い</div>
+                                                <div class="key" data-character="う">う</div>
+                                                <div class="key" data-character="え">え</div>
+                                                <div class="key" data-character="お">お</div>
+                                                <div class="key" data-character="か">か</div>
+                                                <div class="key" data-character="き">き</div>
+                                                <div class="key" data-character="く">く</div>
+                                                <div class="key" data-character="け">け</div>
+                                                <div class="key" data-character="こ">こ</div>
+                                                <div class="key" data-character="さ">さ</div>
+                                                <div class="key" data-character="し">し</div>
+                                                <div class="key" data-character="す">す</div>
+                                                <div class="key" data-character="せ">せ</div>
+                                                <div class="key" data-character="そ">そ</div>
+                                                <div class="key" data-character="た">た</div>
+                                                <div class="key" data-character="ち">ち</div>
+                                                <div class="key" data-character="つ">つ</div>
+                                                <div class="key" data-character="て">て</div>
+                                                <div class="key" data-character="と">と</div>
+                                                <div class="key" data-character="な">な</div>
+                                                <div class="key" data-character="に">に</div>
+                                                <div class="key" data-character="ぬ">ぬ</div>
+                                                <div class="key" data-character="ね">ね</div>
+                                                <div class="key" data-character="の">の</div>
+                                                <div class="key" data-character="は">は</div>
+                                                <div class="key" data-character="ひ">ひ</div>
+                                                <div class="key" data-character="ふ">ふ</div>
+                                                <div class="key" data-character="へ">へ</div>
+                                                <div class="key" data-character="ほ">ほ</div>
+                                                <div class="key" data-character="ま">ま</div>
+                                                <div class="key" data-character="み">み</div>
+                                                <div class="key" data-character="む">む</div>
+                                                <div class="key" data-character="め">め</div>
+                                                <div class="key" data-character="も">も</div>
+                                                <div class="key" data-character="や">や</div>
+                                                <div class="key" data-character="ゆ">ゆ</div>
+                                                <div class="key" data-character="よ">よ</div>
+                                                <div class="key" data-character="ら">ら</div>
+                                                <div class="key" data-character="り">り</div>
+                                                <div class="key" data-character="る">る</div>
+                                                <div class="key" data-character="れ">れ</div>
+                                                <div class="key" data-character="ろ">ろ</div>
+                                                <div class="key" data-character="わ">わ</div>
+                                                <div class="key" data-character="を">を</div>
+                                                <div class="key" data-character="ん">ん</div>
+                                            </div>
+
+                                           </div>
+                                        <button class="btn btn-primary p-3" id="SubmitButton">Next</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="./assets/js/jmrashed.js"></script>
+
+        <script>
+
+            function playNext() {
+                document.getElementById("failureAudio").play();
+            }
+
+            function mouseClick() {
+                document.getElementById("mouseClick").play();
+            }
+            $(document).ready(function () {
+
+                 $("#japaneseInput").focus(function () {
+                    $("#japaneseKeyboard").show();
+                }).blur(function () {
+                    $("#japaneseKeyboard").hide();
+                });
+
+                 $(".japanese-keyboard button").click(function () {
+                    var character = $(this).text();
+                    $("#japaneseInput").val($("#japaneseInput").val() + character);
+                });
+
+                // Creating an array
+                var rootAssetPath = "./assets/images/plants/";
+                var fruits = [
+                    "Product 2.png",
+                    "Product 3.png",
+                    "Product 4.png",
+                    "Product 5.png",
+                    "Product 6.png",
+                    "Product 7.png",
+                    "Product 8.png",
+                    "Product 9.png",
+                    "Product 10.png",
+
+                    "Product 11.png",
+                    "Product 12.png",
+                    "Product 13.png",
+                    "Product 14.png",
+                    "Product 15.png",
+                    "Product 16.png",
+                    "Product 17.png",
+                    "Product 18.png",
+                    "Product 19.png",
+                    "Product 20.png",
+
+                    "Product 21.png",
+                    "Product 22.png",
+                    "Product 23.png",
+                    "Product 24.png",
+                    "Product 25.png",
+                    "Product 26.png",
+                    "Product 27.png",
+                    "Product 28.png",
+                    "Product 29.png",
+                    "Product 30.png",
+
+                    "Product 31.png",
+                    "Product 32.png",
+                    "Product 33.png",
+                    "Product 34.png",
+                    "Product 35.png",
+                    "Product 36.png",
+                    "Product 37.png",
+                    "Product 38.png",
+                    "Product 39.png",
+                    "Product 40.png",
+
+                    "Product 41.png",
+                    "Product 42.png",
+                    "Product 43.png",
+                    "Product 44.png",
+                    "Product 45.png",
+                    "Product 46.png",
+                    "Product 47.png",
+                    "Product 48.png",
+                    "Product 49.png",
+                    "Product 50.png",
+
+                    "Product 51.png",
+                    "Product 52.png",
+                    "Product 53.png",
+                    "Product 54.png",
+                    "Product 55.png",
+                    "Product 56.png"
+                ];
+
+                $("#SubmitButton").on("click", function (e) {
+                    playNext();
+                    // Prevent form submission
+                    e.preventDefault();
+
+                    // Generate a random index to select a random image
+                    var randomIndex = Math.floor(Math.random() * fruits.length);
+
+                    // Construct the URL of the random image
+                    var randomImageUrl = rootAssetPath + fruits[randomIndex];
+
+                    // Update the src attribute of the image with ID randomImageShow
+                    $("#randomImageShow").attr("src", randomImageUrl);
+                     $("#japaneseInput").val("");
+                });
+
+
+                 $(".key").click(function () {
+                    mouseClick();
+                    var character = $(this).attr("data-character");
+                    console.log(character);
+                    $("#japaneseInput").val($("#japaneseInput").val() + character);
+                });
+            });
+        </script>
+
+</body>
+
+</html>
