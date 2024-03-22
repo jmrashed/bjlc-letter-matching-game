@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bangladesh Japanese Language Club | Letter Matching Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description goes here">
+    <meta name="keywords" content="keyword1, keyword2, keyword3">
+    <meta name="author" content="Your Name">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+    <link rel="stylesheet" href="./assets/css/jmrashed.css">
+
+    <style>
+        .keyboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .key {
+            padding: 10px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .key:hover {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <audio id="failureAudio" src="failure.mp3" preload="auto"></audio>
+    <audio id="mouseClick" src="mouse-click.mp3" preload="auto"></audio>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar col-md-3">
+                <a href="Hiragana.html">Hiragana</a>
+                <a href="Katakana.html">Katakana</a>
+                <a href="Kanji.html">Kanji</a>
+                <a href="Romaji.html">Rōmaji</a>
+                <a href="Writing.html">Writing</a>
+                <a href="Plants.html">Plants</a>
+            </div>
+
+            <div class="col-md-9 content">
+                <div class="container mt-5">
+                    <div class="card bg-dark content-card">
+                        <div class="card-body">
+                            <h1 class="text-center mb-4 text-light">Write the plant's name.</h1>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <img src="./assets/images/fruits/Amlaki.png" class="img img-fluid"
+                                        id="randomImageShow" alt="">
+                                </div>
+                                <div class="col-lg-8 col-md-8">
+
+                                    <input type="text" class="form-control mb-3 p-3" name="" placeholder="Japanese Name"
+                                        id="japaneseInput">
+
+                                    <div class="row">
+                                        <div class="keyboard" id="japaneseKeyboard">
+                                            <!-- Japanese keyboard keys will be dynamically added here -->
+                                        </div>
+
+                                    </div>
+                                    <button class="btn btn-primary p-3" id="SubmitButton">Next</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="./assets/js/jmrashed.js"></script>
+
+    <script>
+        function playNext() {
+            document.getElementById("failureAudio").play();
+        }
+
+        function mouseClick() {
+            document.getElementById("mouseClick").play();
+        }
+        $(document).ready(function () {
+
+            $(".key").click(function () {
+                mouseClick();
+                var character = $(this).attr("data-character");
+                $("#japaneseInput").val($("#japaneseInput").val() + character);
+            });
+
+            $("#SubmitButton").on("click", function (e) {
+                playNext();
+                e.preventDefault();
+
+                // Creating an array
+                var rootAssetPath = "./assets/images/fruits/";
+                var fruits = [
+                    "Amlaki.png",
+                    "Apple.png",
+                    "Apricot.png",
+                    "Banana.png",
+                    "Cherry.png",
+                    "Coconut.png",
+                    "Custard Apple.png",
+                    "Grape.png",
+                    "Guava.png",
+                    "Jackfruit.png",
+                    "Kiwi.png",
+                    "Lemon.png",
+                    "Lychee.png",
+                    "Mango.png",
+                    "Orange.png",
+                    "Papaya.png",
+                    "Pineapple.png",
+                    "Tomato.png",
+                    "Watermelon.png",
+                    "Wood Apple.png"
+                ];
+
+                // Generate a random index to select a random image
+                var randomIndex = Math.floor(Math.random() * fruits.length);
+
+                // Construct the URL of the random image
+                var randomImageUrl = rootAssetPath + fruits[randomIndex];
+
+                // Update the src attribute of the image with ID randomImageShow
+                $("#randomImageShow").attr("src", randomImageUrl);
+                $("#japaneseInput").val("");
+
+                console.log("randomImageUrl: " + randomImageUrl);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
